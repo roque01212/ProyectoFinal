@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from ckeditor_uploader.fields import RichTextUploadingField
 from model_utils.models import TimeStampedModel
+from .managers import EntryManager
 # Create your models here.
 
 class Category(models.Model):
@@ -46,7 +47,7 @@ class Entry(TimeStampedModel):
         'Imagen',
         upload_to='Entry',
     )
-    
+    objects=EntryManager()
 
     class Meta:
         verbose_name='Entrada'

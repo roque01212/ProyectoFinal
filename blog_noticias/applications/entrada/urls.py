@@ -5,9 +5,9 @@ app_name='entrada_app'
 
 urlpatterns = [
     path(
-        'noticia/', 
-        views.HomePageView.as_view(), 
-        name='Noticia'
+        'entradas/', 
+        views.EntryListView.as_view(), 
+        name='Entradas'
     ),
 
 ] 

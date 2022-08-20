@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views.generic import TemplateView
 from .models import Contact, Suscribers, About
 from .forms import SuscribersForm, ContactForm
-from applications.entrada.models import Category, Entry
+from applications.entrada.models import  Entry
 # Create your views here.
 
 class HomePageView(TemplateView):
