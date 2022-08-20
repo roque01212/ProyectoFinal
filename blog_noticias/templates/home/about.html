@@ -1,0 +1,54 @@
+<!-- head para PC -->
+{% extends "home/base_home.html" %}
+{% load  static %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x" style="margin-top: 1em;">
+        <h3 class="cell">Datos del grupo</h3>
+        
+        {% for i in about %}
+            
+        
+            
+        <!-- datos del grupo -->
+        <div class="cell large-8">
+            <div class="cell callout primary">
+                
+                <h5>Nombres: {{i.full_name}}</h5>
+                <h5>Apellido: {{i.last_name}}</h5>
+                <h5>Fecha Nacimiento: {{i.date_birth}}</h5>
+                <h5>Edad: {{i.age}}</h5>
+                <h5>Correo Electronico: {{i.email}}</h5>
+                <h5>N° Celular: {{i.phone}}</h5>
+                
+
+            </div>
+            <div>
+                <h4>Descripcion: </h4>
+                <h5>{{i.description}}</h5>
+            </div>
+        </div>
+        <!-- FIN datos de grupo -->
+
+        <!-- imagen -->
+        <div class="cell large-4">
+            <div class="card" style="width: 100%;">
+                <img src="{{ i.image.url }}">
+                <div class="card-section" style="width: 100%;">
+                  <div class="blog-action">
+                    <a class="button alert" href="#">Agregar a Favoritos</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% include "includes/footer.html" %}
+
+{% endblock content %}
