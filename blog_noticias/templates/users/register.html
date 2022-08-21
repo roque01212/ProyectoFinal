@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+Registro
+{% endblock %}
+
+{% load  static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/myblog.css' %}">
+{% endblock css %}
+
+
+
+{%block content%}
+<form action="" method='POST' enctype="multipart/form-data">
+{% csrf_token %}
+<table>
+   
+   {{ form.as_table }}
+
+
+</table>
+<p> <input type="submit" , value="registrar"> </p>
+</form>
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}
