@@ -9,5 +9,10 @@ urlpatterns = [
         views.EntryListView.as_view(), 
         name='Entradas'
     ),
+     path(
+        'detalle/<pk>/', 
+        views.EntryDetailView.as_view(), 
+        name='Detalle'
+    ),
 
 ] 
