@@ -85,8 +85,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dbblognoticia',
-        'USER': 'camilo',
-        'PASSWORD': '1234',
+        'USER': 'roque',
+        'PASSWORD': 'estela34874552',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -139,10 +139,7 @@ MEDIA_ROOT = BASE_DIR.child('media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> Camilo
 # ckeditor setting
 CKEDITOR_UPLOAD_PATH='uploads/'
 CKEDITOR_IMAGE_BACKEND='pillow'
@@ -161,8 +158,3 @@ CKEDITOR_CONFIGS = {
         ]
     },
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> Camilo
