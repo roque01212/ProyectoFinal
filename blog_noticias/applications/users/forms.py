@@ -1,6 +1,4 @@
 
-from distutils.command.upload import upload
-from email.mime import image
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
