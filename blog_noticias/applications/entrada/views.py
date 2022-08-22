@@ -33,8 +33,3 @@ class EntryListView(ListView):
 class EntryDetailView(DetailView):
     template_name = "entrada/detail.html"
     model = Entry
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> roque
