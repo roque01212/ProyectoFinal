@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 
 # Create your views here.
-=======
+
 
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
@@ -58,4 +57,4 @@ def show_profile(request):
 # def show_profile(request):
 #     if request.user.is_authenticated:
 #         return HttpResponse(request.user)
->>>>>>> Camilo
+

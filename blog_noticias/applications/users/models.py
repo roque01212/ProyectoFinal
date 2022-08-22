@@ -1,8 +1,7 @@
 from django.db import models
 
-<<<<<<< HEAD
+
 # Create your models here.
-=======
 class Users(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE,related_name='profile')
     phone = models.CharField(max_length=20, blank=True)
@@ -16,4 +15,3 @@ class Users(models.Model):
     
 
 
->>>>>>> Camilo
