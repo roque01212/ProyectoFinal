@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< HEAD
 from django.conf import settings
 from ckeditor_uploader.fields import RichTextUploadingField
 from model_utils.models import TimeStampedModel
@@ -57,3 +58,7 @@ class Entry(TimeStampedModel):
         return  f"{self.title } {self.id}"
 
 
+=======
+
+# Create your models here.
+>>>>>>> Camilo

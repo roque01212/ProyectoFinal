@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
@@ -30,3 +31,8 @@ class EntryListView(ListView):
 class EntryDetailView(DetailView):
     template_name = "entrada/detail.html"
     model = Entry
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> Camilo
