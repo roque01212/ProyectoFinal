@@ -44,15 +44,12 @@ def register_request(request):
         return render(request,'users/register.html',{'form': form})
 
 
-# def show_profile(request):
-#     if request.user.is_authenticated:
-#         i = Users.objects.all()
-#         context ={
-#             'i': i
-#         }
-#         return render(request,'users/profile.html',context=context)
-
-
 def show_profile(request):
     if request.user.is_authenticated:
-        return HttpResponse(request.user.profile.phone)
+       
+        return render(request,'users/profile.html')
+
+
+# def show_profile(request):
+#     if request.user.is_authenticated:
+#         return HttpResponse(request.user)
