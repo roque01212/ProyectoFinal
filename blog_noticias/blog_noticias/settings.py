@@ -135,3 +135,24 @@ MEDIA_ROOT = BASE_DIR.child('media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ckeditor setting
+CKEDITOR_UPLOAD_PATH='uploads/'
+CKEDITOR_IMAGE_BACKEND='pillow'
+CKEDITOR_JQUERY_URL='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom' : [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'OutIdent', 'Ident', '-', 'JustifyLeft', 'JustifyRight', 'JustifyCenter'],
+            ['TextColor', 'Format', 'FontSize', 'Link'],
+            ['Smiley', 'Image', 'Iframe'],
+            ['RemoveFormat', 'Source'],
+        ]
+    },
+}
+
+

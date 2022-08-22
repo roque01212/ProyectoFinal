@@ -1,60 +1,57 @@
 <!-- head para PC -->
 {% extends "home/base_home.html" %}
-{% load  static %}
+{% load static %}
 
 {% block content %}
 
 {% include "includes/header.html" %}
 
+
+
+
+
 <div class="grid-container">
     <!-- primer bloque del home -->
     <div class="grid-x grid-margin-x" style="margin-top: 1em;">
         <!-- bloque de blog principal -->
+        
+        {% if noticia %}
+            
+        
         <div class="cell small-12 large-6">
+            <h2>Noticia destacada</h2>
             <div class="card" style="width: 100%;">
-                <img src="https://neunapp.com/media/blog/1.png">
+                <img src="{{ noticia.image.url }}">
                 <div class="card-section">
-                  <h4>This is a card.</h4>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                    <h4>{{ noticia.title | truncatechars:30 }}.</h4>
+                    <p>{{ noticia.resume | truncatechars:70 }}</p>
                 </div>
             </div>
         </div>
+        
+        {% endif %}
+
         <!-- FIN bloque de blog principal -->
 
         <!-- bloque de blog principal -->
-        <div class="cell small-12 large-6 grid-x grid-margin-x">
+
+        
+        <div class="cell small-12 large-6 grid-x grid-margin-x ">
+            
+            <h4 class="cell ">Categoria Deporte</h4>
+            
+            {% for i in categorias %}
             <div class="cell small-12 large-6">
                 <div class="card" style="width: 100%;">
-                    <img src="https://neunapp.com/media/blog/header16.jpg">
+                    <img src="{{i.image.url}}">
                     <div class="card-section">
-                      <h5>This is a card.</h5>
+                        <h5>{{i.title | truncatechars:30}}</h5>
                     </div>
                 </div>
             </div>
-            <div class="cell small-12 large-6">
-                <div class="card" style="width: 100%;">
-                    <img src="https://neunapp.com/media/blog/header16.jpg">
-                    <div class="card-section">
-                      <h5>This is a card.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="cell small-12 large-6">
-                <div class="card" style="width: 100%;">
-                    <img src="https://neunapp.com/media/blog/header16.jpg">
-                    <div class="card-section">
-                      <h5>This is a card.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="cell small-12 large-6">
-                <div class="card" style="width: 100%;">
-                    <img src="https://neunapp.com/media/blog/header16.jpg">
-                    <div class="card-section">
-                      <h5>This is a card.</h5>
-                    </div>
-                </div>
-            </div>
+            {% empty %}
+                <h3 style="color:red;">No hay resultados</h3>
+            {% endfor %}
         </div>
         <!-- FIN bloque de blog principal -->
     </div>
@@ -63,63 +60,38 @@
     <!-- segundo bloque pantalla home -->
     <div class="grid-x align-center" style="margin-top: 1em;">
         <div class="cell small-12 large-10 callout secondary">
-            <h5>Conoce mas de nostros:</h5>
+            <h5>Suscribete</h5>
             <p>
-                Creamos contenido educativo relacionado a la programación web, frontend backedn, servidores y demás, para enterarte sobre nuevas publicaciones suscribete a nuestro blog.
+                Puesdes suscribirte y nos comunicaremos con Usted
+                Muchas Gracias por visitarnos
             </p>
-
-            <p>
-                <button class="button" data-open="exampleModal2">Suscribirme</button>
-            </p>
-
-            <!-- This is the first modal -->
-            <div class="reveal" id="exampleModal2" data-reveal style="width: 300px;">
-                <p class="lead">Ingresa tu correo</p>
-                <form class="grid-x grid-margin-x">
-                    <div class="cell small-12">
-                        <input type="text" placeholder="E-mail..">
-                    </div>
-                    <div class="cell small-12">
-                        <button type="button" class="success button">Suscribirme</button>
-                    </div>
-                </form>
-            </div>
+            <form class="grid-x grid-margin-x" method="POST" action="">{% csrf_token %}
+                <div class="cell small-12">
+                    <input type="email" placeholder="E-mail.." name="email">
+                </div>
+                <div class="cell small-12">
+                    <button type="submit" class="success button">Suscribirme</button>
+                </div>
+            </form>
 
         </div>
     </div>
-    <!-- FIN segundo bloque pantalla home -->
-
-
-    <!-- tercer bloque home -->
     <div class="grid-x grid-margin-x align-center">
         <h3 class="cell">Articulos Recientes:</h3>
+        {% for i in ultimas_noticias %}
         <div class="cell small-6 large-4">
             <div class="card" style="width: 100%;">
-                <img src="https://neunapp.com/media/blog/1.png">
+                <img src="{{i.image.url}}">
                 <div class="card-section">
-                  <h4>This is a card.</h4>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                    <h4>{{i.title | truncatechars:30}}</h4>
+                    <p>{{ i.resume | truncatechars:70 }}.</p>
                 </div>
             </div>
         </div>
-        <div class="cell small-6 large-4">
-            <div class="card" style="width: 100%;">
-                <img src="https://neunapp.com/media/blog/1.png">
-                <div class="card-section">
-                  <h4>This is a card.</h4>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                </div>
-            </div>
-        </div>
-        <div class="cell small-6 large-4">
-            <div class="card" style="width: 100%;">
-                <img src="https://neunapp.com/media/blog/1.png">
-                <div class="card-section">
-                  <h4>This is a card.</h4>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                </div>
-            </div>
-        </div>
+        {% empty %}
+                <h3 style="color:red;">No hay resultados</h3>
+        {% endfor %}
+
     </div>
     <!-- FIN tercer bloque -->
 </div>
