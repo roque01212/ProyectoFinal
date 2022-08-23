@@ -8,8 +8,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('applications.home.urls')),
-    path('', include('applications.entrada.urls')),
-    path('', include('applications.favoritos.urls')),
+    path('entrada/', include('applications.entrada.urls')),
+    path('favoritos/', include('applications.favoritos.urls')),
     # urls para ckeditor
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
