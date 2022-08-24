@@ -19,37 +19,30 @@
                             {{form.email}}
                             </label>
                         </div>
+                        <div class="cell ">
+                          <label style="color: red;">
+                          {{error.username}}
+                            </label>
+                        </div>
                         <div class="cell large-6">
                             <label>Nombre Usuario:
                               {{form.username}}
                             </label>
                         </div>
-                        <div class="cell medium-6">
-                            <label>Direccion
-                              {{form.address}}
-                            </label>
-                        </div>
-                        <div class="cell medium-6">
-                            <label>phone:
-                              {{form.phone}}
-                            </label>
-                        </div>
-                        <div class="cell medium-6">
-                            <label>foto perfil:
-                              {{form.image}}
-                            </label>
-                        </div>
+ 
                         <div class="cell medium-12">
                             <label>Contraseña:
                               {{form.password1}}
                             </label>
                         </div>
                         <div class="cell medium-12">
+                         <div style="color: red;">{{error.password2}}</div> 
                             <label>Repetir Contraseña:
                               {{form.password2}}
                             </label>
                         </div>
                         <button type="submit" class="cell hollow button primary" >Registrar</button>
+                        
                     </form>
                 </div>
             </div>

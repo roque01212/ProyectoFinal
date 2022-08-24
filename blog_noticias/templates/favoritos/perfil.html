@@ -9,13 +9,36 @@
 <div class="grid-container">
     <div class="grid-x grid-margin-x align-center" style="margin-top: 1em;">
         <!-- bloque de datos de usuario -->
+        
+
+        
+        
+            
+       
         <div class="cell small-12 large-4">
-            <div class="callout">
-                <h5>Cristhian Santa Cruz</h5>
-                <p>neunapp.servicios@gmail.com - Programador - 20-18-1991</p>
-                <a href="#">Editar Datos</a>
+
+            {% if user.profile.image %}
+        <div class="callout">
+            <div class="card" style="width: 100%;">
+                <img src="{{user.profile.image.url }}">
+                
+            </div>
+
+        {% endif %}
+           
+                <h5>{{user.username}}</h5>
+                <p> {{user.profile.phone}} - {{user.profile.address}} - {{user.profile.email}}</p>
+                
+                {% if user.profile %}
+                    
+                <a href="{% url 'Update' user.profile.id %}">Editar Datos</a>
+                {% else %}
+                <a href="{% url 'Profile' %}">Crear Datos Adicionales</a>
+                {% endif %}
+                    
             </div>
         </div>
+
         <!-- FIN bloque de datos de usuario -->
 
 

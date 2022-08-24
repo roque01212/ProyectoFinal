@@ -1,16 +1,11 @@
-from django.shortcuts import render, redirect
-
-# Create your views here.
-
-
-from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import AuthenticationForm
-
 from django.contrib.auth import login,logout,authenticate
-from .models import Users
-
-from .forms import User_registrations_form
+from django.views.generic import UpdateView
+from django.views.generic.edit import FormView
+from django.urls import reverse_lazy
+from .models import User_profile
+from .forms import User_registrations_form, UserForm
 
 
 def login_request(request):
@@ -33,15 +28,16 @@ def login_request(request):
 
 def register_request(request):
     if request.method == 'POST':
-        form =  User_registrations_form(request.POST, request.FILES)
+        form =  User_registrations_form(request.POST)
+        
         if form.is_valid():
             form.save()
             return redirect('login')
         else:
-            context = {'errors':form.errors}
+            error =form.errors
             form = User_registrations_form()
-            context['form'] = form
-            return render(request,'users/register.html',{'form': form})
+            
+            return render(request,'users/register.html',{'form': form ,'error':error})
 
     elif request.method == 'GET':
         form = User_registrations_form()
@@ -53,13 +49,35 @@ def cerrar_sesion(request):
     return redirect("home_app:Index")
 
 
-def show_profile(request):
-    if request.user.is_authenticated:
-       
-        return render(request,'users/profile.html')
+class RegistarUsuario(FormView):
+    template_name='users/profile.html'
+    form_class=UserForm
+    # se recarga la misma vista
+    success_url=reverse_lazy('favorito_app:Perfil')
+
+    def form_valid(self, form):
+
+        usuario=User_profile(
+            user=form.cleaned_data['user'],
+            phone=form.cleaned_data['phone'],
+            address=form.cleaned_data['address'],
+            email=form.cleaned_data['email'],
+            image=form.cleaned_data['image'],
+        )
+        usuario.save()
+        return super(RegistarUsuario, self).form_valid(form)
 
 
-# def show_profile(request):
-#     if request.user.is_authenticated:
-#         return HttpResponse(request.user)
+class UpdateUser(UpdateView):
+    model = User_profile
+    template_name='users/update.html'
+    fields=(
+        'phone',
+        'address',
+        'email',
+        'image',
+    )
+    success_url =  reverse_lazy('home_app:Index')
+    def form_valid(self, form) :
 
+        return super(UpdateUser,self).form_valid(form)
