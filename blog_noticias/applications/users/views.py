@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -23,8 +23,8 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 
-                context = {'message':f'Bienvenido {username}!!'}
-                return render(request, 'home/index.html', context = context)
+                
+                return redirect('home_app:Index')
         form =  AuthenticationForm()
         return render(request, 'users/login.html', {'error': 'Formulario invalido', 'form':form})
     elif request.method == 'GET':
@@ -46,6 +46,11 @@ def register_request(request):
     elif request.method == 'GET':
         form = User_registrations_form()
         return render(request,'users/register.html',{'form': form})
+
+
+def cerrar_sesion(request):
+    logout(request)
+    return redirect("home_app:Index")
 
 
 def show_profile(request):

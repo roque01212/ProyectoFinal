@@ -139,10 +139,7 @@ MEDIA_ROOT = BASE_DIR.child('media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> Camilo
 # ckeditor setting
 CKEDITOR_UPLOAD_PATH='uploads/'
 CKEDITOR_IMAGE_BACKEND='pillow'
@@ -161,8 +158,3 @@ CKEDITOR_CONFIGS = {
         ]
     },
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> Camilo

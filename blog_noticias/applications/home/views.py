@@ -1,5 +1,4 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import TemplateView
@@ -53,10 +52,8 @@ def form_contact(request):
 def about(request):
     about=About.objects.all()
     return render(request, 'home/about.html', {'about':about})
-=======
 
 # Create your views here.
 
 def inicio(request):
     return render(request, 'home/index.html')
->>>>>>> Camilo
