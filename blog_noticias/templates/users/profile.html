@@ -1,5 +1,4 @@
-{{request.user.profile.phone}}
-{{user.username}}
-{{user.phone}}
-
-
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Enviar</button>
+</form>
