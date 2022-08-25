@@ -1,15 +1,37 @@
 <header>
     <div class="grid-x grid-margin-x header">
         
+
+
+
         {% if user.is_superuser %}
             
         
-        <div class="cell small-12 medium-4 large-3">
+        <div class="cell ">
             <a href="{% url 'entrada_app:Create-entry' %}" style="font-size: 20px; color: #0277bd;">
                 Crear Noticias
             </a>
         </div>
+        <div class="cell ">
+            <a href="#" style="font-size: 20px; color: #0277bd;">
+               Mensajes recibidos
+            </a>
+        </div>
+        <div class="cell ">
+            <a href="#" style="font-size: 20px; color: #0277bd;">
+                Suscriptores
+            </a>
+        </div>
+
+
         {% else %}
+
+
+
+
+
+
+
         <div class="cell small-12 medium-4 large-3">
                 Noticias
         </div>
@@ -22,12 +44,12 @@
                 <p>{{user.phone}}</p>
                 
                 
-                {% if request.user.is_authenticated %}
+                
                 <li>
                     <a href="{% url 'home_app:About' %}">Sobre nosotros</a>
                 </li>
                     
-                {% endif %}
+               
                     
 
                 <li>

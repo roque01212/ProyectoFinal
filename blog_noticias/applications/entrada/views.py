@@ -27,10 +27,7 @@ class EntryDetailView(DetailView):
     template_name = "entrada/detail.html"
     model = Entry
 
-    def get_context_data(self, **kwargs):
-        context = super(EntryDetailView, self).get_context_data(**kwargs)
-        context['favorito_existente']=Favorites.objects.favorito_existente( self.request.user)
-        return context
+   
         
 
 def crear_entrada(request):

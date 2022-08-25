@@ -6,7 +6,7 @@
 
 {% include "includes/header.html" %}
 
-{{favorito_existente}}
+
 
 <div class="grid-container">
     <div class="grid-x grid-margin-x" style="margin-top: 1em;">
@@ -32,14 +32,13 @@
 
                     {% if user.is_authenticated %}
                     
-                    {% if favorito_existente  %}
-                        
-                    
-                    {% else %}
+                  
+              
+                  
                     <form class="blog-action" method="POST" action="{% url 'favorito_app:Add-entrada' entry.id %}">{% csrf_token %}
                         <button type="submit" class="button alert ">Agregar a Favoritos</button>
                     </form>
-                    {% endif %}
+                  
                     
                     {% endif %}
                 </div>

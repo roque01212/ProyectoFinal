@@ -50,10 +50,12 @@ def prueba(request):
     favoritos=Favorites.objects.filter(user=request.user.id)
     print(favoritos)
     usuario=request.user.username
+    print(usuario)
     for i in favoritos:
         if i.user.username == usuario:
             # print(i.user.username)
             print('existe')
+
         else:
             print('no existe')
-    return HttpResponse('hola')
+        return HttpResponse('hola')
