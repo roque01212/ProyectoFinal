@@ -14,5 +14,10 @@ urlpatterns = [
         views.EntryDetailView.as_view(), 
         name='Detalle'
     ),
+     path(
+        'create-entry', 
+        views.crear_entrada, 
+        name='Create-entry'
+    ),
 
 ] 

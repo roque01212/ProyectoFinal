@@ -24,7 +24,7 @@ class Favorites(TimeStampedModel):
     objects=FavoritesManager()
 
     class Meta:
-        unique_together=('user', 'entry')
+        
         verbose_name='Entrada Favorita'
         verbose_name_plural='Entradas favoritas'
 
