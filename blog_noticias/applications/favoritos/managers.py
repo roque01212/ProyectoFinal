@@ -1,4 +1,3 @@
-from genericpath import exists
 from django.db import models
 
 class FavoritesManager(models.Manager):
@@ -7,5 +6,4 @@ class FavoritesManager(models.Manager):
         return self.filter(
             user=usuario
         ).order_by('-created')
-
-    
+        
