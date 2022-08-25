@@ -1,7 +1,6 @@
 from django.db import models
 
 class EntryManager(models.Manager):
-
     """ porcedimiento para entrada """
 
     def buscar_entrada(self, kword, categoria):
@@ -10,10 +9,8 @@ class EntryManager(models.Manager):
             return self.filter(
                 category__name=categoria,
                 title__icontains=kword,
-                
             ).order_by('-created')
         else:
             return self.filter(
-                title__icontains=kword,
-                
+                title__icontains=kword,  
             ).order_by('-created')

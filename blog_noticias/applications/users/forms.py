@@ -25,4 +25,9 @@ class UserForm(forms.ModelForm):
         """Meta definition for Userform."""
 
         model = User_profile
-        fields = ('__all__')
+        fields = (
+            'phone',
+            'address',
+            'email',
+            'image',
+        )

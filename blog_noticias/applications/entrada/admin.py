@@ -2,5 +2,18 @@
 from django.contrib import admin
 from .models import Category, Entry
 # Register your models here.
-admin.site.register(Category)
-admin.site.register(Entry)
+@admin.register(Entry)
+class EntryAdmin(admin.ModelAdmin):
+    '''Admin View for Entry'''
+
+    list_display = ('id','user','category','title')
+    list_filter = ('category',)
+    ordering = ('id',)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    '''Admin View for Category'''
+
+    list_display = ('id','name')
+    list_filter = ('name',)
+    ordering = ('id',)

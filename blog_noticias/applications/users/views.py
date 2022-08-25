@@ -58,7 +58,7 @@ class RegistarUsuario(FormView):
     def form_valid(self, form):
 
         usuario=User_profile(
-            user=form.cleaned_data['user'],
+            user=self.request.user,
             phone=form.cleaned_data['phone'],
             address=form.cleaned_data['address'],
             email=form.cleaned_data['email'],
@@ -81,3 +81,6 @@ class UpdateUser(UpdateView):
     def form_valid(self, form) :
 
         return super(UpdateUser,self).form_valid(form)
+
+
+

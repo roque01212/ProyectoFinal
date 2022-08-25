@@ -8,7 +8,6 @@ from .managers import EntryManager
 
 class Category(models.Model):
     """Categorias de una entrada"""
-
     name = models.CharField(
         'Nombre Corto',
         max_length=15,
@@ -28,22 +27,18 @@ class Entry(TimeStampedModel):
 
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        
+        on_delete=models.CASCADE,       
     )
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE,
-       
-    )
-    
+        on_delete=models.CASCADE,     
+    )  
     title = models.CharField(
         'Titulo',
         max_length=200
     )
     resume = models.TextField('Resumen')
     content=RichTextUploadingField('contenido')
-    
     image = models.ImageField(
         'Imagen',
         upload_to='Entry',

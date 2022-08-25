@@ -1,6 +1,6 @@
 
 <!-- head para PC -->
-{% extends "users/base_users.html" %}
+{% extends "entrada/base_entrada.html" %}
 {% load  static %}
 
 {% block content %}
@@ -12,24 +12,31 @@
         <div class="cell medium-6 large-4" style="margin-top: 2em;" >
             <div class="card" style="width: 100%;">
                 <div class="card-divider">
-                  <h4>Crear perfil  {{user}}</h4>
+                  <h4>Creando Nueva Noticia {{user}}</h4>
                 </div>
                 <div class="card-section">
                     <form class="grid-x grid-margin-x" method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
                         </div>
+                        {{form.errors}}
+                        </div>
                         <div class="cell large-12">
-                            <label>N° Telefono:
-                            {{form.phone}}
+                            <label>Categoria:
+                            {{form.category}}
                             </label>
                         </div>
                         <div class="cell large-12">
-                            <label>Direccion:
-                            {{form.address}}
+                            <label>Titulo:
+                            {{form.title}}
                             </label>
                         </div>
                         <div class="cell medium-12">
-                            <label>Email:
-                              {{form.email}}
+                            <label>Resumen:
+                              {{form.resume}}
+                            </label>
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Contenido:
+                              {{form.content}}
                             </label>
                         </div>
                         <div class="cell medium-12"> 
