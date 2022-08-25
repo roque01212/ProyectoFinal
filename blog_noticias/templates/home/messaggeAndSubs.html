@@ -1,0 +1,34 @@
+{% extends "home/base_home.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+
+
+<!-- crear Noticias -->
+<div class="cell ">
+    <a href="{% url 'entrada_app:Create-entry' %}" style="font-size: 20px; color: #0277bd;">
+        Crear Noticias
+    </a>
+</div>
+
+
+<!-- lista de mensajes -->
+
+{% for i in listmessagge %}
+    <h1>mensaje de: {{i.full_name}}</h1>
+    <h1>Contacto email: {{i.email}}</h1>
+    <h1> MENSAJE: {{i.messagge}}</h1>
+{% endfor %}
+
+<!-- lista de subscriptores -->
+
+{% for i in subscription %}
+    <h1>lista de subscriptores: {{i.email}}</h1>
+{% endfor %}
+
+<!-- contador de subscriptores -->
+<h1>subscriptores: {{subscriptionTodal}}</h1>
+{% endblock content %}

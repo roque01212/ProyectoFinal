@@ -1,4 +1,5 @@
-from django.shortcuts import render
+
+from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import TemplateView
@@ -57,3 +58,18 @@ def about(request):
 
 def inicio(request):
     return render(request, 'home/index.html')
+
+
+
+def ListMessaggeAndSubs(request):
+    if request.user.is_authenticated and request.user.is_superuser:
+        listmessage = Contact.objects.all()
+        subscription = Suscribers.objects.all()
+        subscriptionTodal =subscription.count()
+        context= {
+            'listmessagge': listmessage,
+            'subscription':subscription,
+            'subscriptionTodal':subscriptionTodal,
+        }
+        return render(request,'home/messaggeAndSubs.html',context=context)
+    return redirect('home/index.html')

@@ -25,4 +25,7 @@ urlpatterns = [
         views.about,
         name='About',
     ),
+    path('messagge/',
+    views.ListMessaggeAndSubs,
+    name='messagge')
 ]
