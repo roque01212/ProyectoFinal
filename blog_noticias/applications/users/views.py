@@ -77,7 +77,7 @@ class UpdateUser(UpdateView):
         'email',
         'image',
     )
-    success_url =  reverse_lazy('home_app:Index')
+    success_url =  reverse_lazy('favorito_app:Perfil')
     def form_valid(self, form) :
 
         return super(UpdateUser,self).form_valid(form)

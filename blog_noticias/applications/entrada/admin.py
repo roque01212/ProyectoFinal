@@ -8,7 +8,7 @@ class EntryAdmin(admin.ModelAdmin):
 
     list_display = ('id','user','category','title')
     list_filter = ('category',)
-    ordering = ('id',)
+    ordering = ('user',)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

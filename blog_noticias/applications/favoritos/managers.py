@@ -7,3 +7,10 @@ class FavoritesManager(models.Manager):
             user=usuario
         ).order_by('-created')
         
+    def favoritos(self, usuario, id_entry):
+        # Verificamos si el usuario ya tiene el favorito
+        return self.filter(
+            user=usuario,
+            entry=id_entry
+        ).exists()
+        

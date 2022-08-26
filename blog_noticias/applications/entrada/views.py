@@ -26,9 +26,13 @@ class EntryListView(ListView):
 class EntryDetailView(DetailView):
     template_name = "entrada/detail.html"
     model = Entry
+    
 
-   
-        
+    def get_context_data(self, **kwargs):
+        context = super(EntryDetailView, self).get_context_data(**kwargs)
+        context['validar']=Favorites.objects.favoritos(self.request.user, self.object.id)
+        return context
+    
 
 def crear_entrada(request):
     if request.user.is_authenticated and request.user.is_superuser:
