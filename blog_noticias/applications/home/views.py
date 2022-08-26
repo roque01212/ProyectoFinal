@@ -21,8 +21,6 @@ class HomePageView(TemplateView):
         return context
     
 
-
-
 # Suscribers
 def form_Suscribers(request):
     if request.method=='POST':

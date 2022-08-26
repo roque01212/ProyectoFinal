@@ -20,7 +20,7 @@ class EntryForm(forms.ModelForm):
                 attrs={
                     'placeholder':'Correo Electronico...',
                     'cols':30,
-                     'rows':10
+                    'rows':10
                     
                 }
             )

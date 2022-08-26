@@ -1,48 +1,50 @@
 <header>
+
     <div class="grid-x grid-margin-x header">
-        
-
-
 
         {% if user.is_superuser %}
+<<<<<<< HEAD
             
         
         
         <div class="cell ">
             <a href="{% url 'home_app:messagge' %}" style="font-size: 20px; color: #0277bd;">
                Panel Adm
+=======
+
+        <div class="cell ">
+            <a href="{% url 'entrada_app:Create-entry' %}" style="font-size: 20px; color: #0277bd;">
+                Crear Noticias
+            </a>
+        </div>
+        <div class="cell ">
+            <a href="#" style="font-size: 20px; color: #0277bd;">
+                Mensajes recibidos
+            </a>
+        </div>
+        <div class="cell ">
+            <a href="#" style="font-size: 20px; color: #0277bd;">
+                Suscriptores
+>>>>>>> 6b0a6a2fa8973d9063fbf2efc08342a76d8b8648
             </a>
             
         </div>
 
-
         {% else %}
 
-
-
-
-
-
-
         <div class="cell small-12 medium-4 large-3">
-                Noticias
+            Noticias
         </div>
         {% endif %}
         <div class="cell small-12 medium-4">
-            
+
         </div>
         <div class="cell small-12 large-5">
             <ul class="menu" style="justify-content: flex-end;">
-                <p>{{user.phone}}</p>
-                
-                
-                
+
                 <li>
                     <a href="{% url 'home_app:About' %}">Sobre nosotros</a>
                 </li>
-                    
-               
-                    
 
                 <li>
                     <a href="{% url 'home_app:Index' %}">Home</a>
@@ -50,7 +52,7 @@
                 <li>
                     <a href="{% url 'entrada_app:Entradas' %}">Blog</a>
                 </li>
-                
+
                 {% if request.user.is_authenticated %}
                 <li>
                     <a href="{% url 'favorito_app:Perfil' %}" class="susccess button">Perfil</a>
@@ -67,8 +69,6 @@
                     <a href="{% url 'register' %}" class="susccess button">Crear Cuenta</a>
                 </li>
                 {% endif %}
-                    
-                
             </ul>
         </div>
     </div>
