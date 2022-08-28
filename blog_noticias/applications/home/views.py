@@ -15,7 +15,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['noticia']=Entry.objects.first()
-        context['categorias']=Entry.objects.filter(category__name="deporte")[:4]
+        context['categorias']=Entry.objects.all().order_by('-created')[:4]
         
         context['ultimas_noticias']=Entry.objects.order_by('created')[:6]
         return context

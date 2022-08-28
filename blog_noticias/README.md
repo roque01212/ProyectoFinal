@@ -19,11 +19,19 @@ Blog de noticias completo, pagina inicial que muestra las noticias mas recientes
 ## Requerimientos: 
 
 ### Install:
-- ckeditor
+
+- asgiref            3.5.2
+- Django             4.0.6
+- django-ckeditor    6.4.2
+- django-js-asset    2.0.0
+- django-model-utils 4.2.0
+- Pillow             9.2.0
+- pip                20.2.3
+- psycopg2           2.9.3
+- setuptools         49.2.1
+- sqlparse           0.4.2
+- tzdata             2022.1
 - Unipath
-- Pillow  
-- django-js-asset
-- django-model-utils
 
 ##  Usuarios
 > - crear usuario
