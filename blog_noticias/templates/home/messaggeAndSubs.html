@@ -14,21 +14,45 @@
     </a>
 </div>
 
+<div class="grid-container">
 
-<!-- lista de mensajes -->
+    <h2>Mensajes recibidos</h2>
+    <!-- lista de mensajes -->
+    <div class=" grid-x ">
+        {% for i in listmessagge %}
+        <div class="card large-4">
 
-{% for i in listmessagge %}
-    <h1>mensaje de: {{i.full_name}}</h1>
-    <h1>Contacto email: {{i.email}}</h1>
-    <h1> MENSAJE: {{i.messagge}}</h1>
-{% endfor %}
 
-<!-- lista de subscriptores -->
+            <div class="cell callout success">
+                <h5>mensaje de: {{i.full_name}}</h5>
+                <p>MENSAJE: {{i.messagge}}</p>
+                <p>Contacto email: {{i.email}}</p>
+                
+            </div>
+            
+       
+        </div>
+        {% endfor %}
+    </div>
+     <!-- contador de subscriptores -->
+     <h3>Total de subscriptores {{subscriptionTodal}}</h3>
+    <!-- lista de subscriptores -->
+    <table>
+        <thead>
+          <tr>
+              <th>Lista suscriptores</th>
+              
+        </tr>
+        </thead>
+        <tbody>
+            {% for i in subscription %}
+          <tr>
+            <td>{{i.email}}</td>
+           
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-{% for i in subscription %}
-    <h1>lista de subscriptores: {{i.email}}</h1>
-{% endfor %}
-
-<!-- contador de subscriptores -->
-<h1>subscriptores: {{subscriptionTodal}}</h1>
-{% endblock content %}
+    {% endblock content %}
+</div>

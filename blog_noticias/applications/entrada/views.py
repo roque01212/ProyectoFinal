@@ -30,7 +30,9 @@ class EntryDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(EntryDetailView, self).get_context_data(**kwargs)
-        context['validar']=Favorites.objects.favoritos(self.request.user, self.object.id)
+        if self.request.user.is_authenticated:
+            context['validar']=Favorites.objects.favoritos(self.request.user, self.object.id)
+            return context
         return context
     
 

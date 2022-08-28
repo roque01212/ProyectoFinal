@@ -70,4 +70,4 @@ def ListMessaggeAndSubs(request):
             'subscriptionTodal':subscriptionTodal,
         }
         return render(request,'home/messaggeAndSubs.html',context=context)
-    return redirect('home/index.html')
+    return redirect('login')
