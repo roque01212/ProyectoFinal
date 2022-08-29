@@ -1,6 +1,6 @@
 ## Integrantes del grupo 
-Gerez roque emanuel
-Camilo Astoviza
+- Gerez roque emanuel
+- Camilo Astoviza
 ## Funciones realizadas
 Gerez roque
 - creacion de aplicacion entrada, favoritos y home
