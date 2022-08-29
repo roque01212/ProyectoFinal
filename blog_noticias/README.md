@@ -1,3 +1,14 @@
+## Integrantes del grupo 
+Gerez roque emanuel
+Camilo Astoviza
+## Funciones realizadas
+Gerez roque
+- creacion de aplicacion entrada, favoritos y home
+Astoviza Camilo 
+- creacion de aplicacion usuario
+- creacion Readme 
+- creacion video explicativo
+
 ## Nombre del proyecto 
 >>  **Blog Noticias** 
 
