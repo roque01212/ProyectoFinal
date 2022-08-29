@@ -2,9 +2,9 @@
 - Gerez roque emanuel
 - Camilo Astoviza
 ## Funciones realizadas
-Gerez roque
+- Gerez roque
 - creacion de aplicacion entrada, favoritos y home
-Astoviza Camilo 
+- Astoviza Camilo
 - creacion de aplicacion usuario
 - creacion Readme 
 - creacion video explicativo
