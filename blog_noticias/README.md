@@ -23,6 +23,8 @@
 - [Mensajes y Suscripcion](#Mensajes-y-Suscripcion)
 - [Perfil](#Perfil)
 
+## Video funcionamineto del Blog
+- https://youtu.be/3Hs5rFobEAM
 
 ## Description
 Blog de noticias completo, pagina inicial que muestra las noticias mas recientes, seccion donde se encuentran todas las noticias, apartado de creacion de usuario, contacto con usuarios, opcion de subscribirse al blog
